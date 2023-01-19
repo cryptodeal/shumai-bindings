@@ -1,0 +1,74 @@
+
+
+Sampling rate: 1000.000000 microseconds. Total samples: 939
+Top functions as <numSamples  'functionName#hash:sourceID'>
+   735    '_float32Buffer#<nil>:4294967295'
+    39    'toArrayBuffer#<nil>:4294967295'
+    31    '_add#<nil>:4294967295'
+    24    'wrapFLTensor#<nil>:3'
+    24    '#<nil>:3'
+    22    'add#<nil>:6'
+    15    'gcAsNeeded#<nil>:4'
+    12    'filter#<nil>:5'
+     8    'toFloat32Array#<nil>:3'
+     8    '_asContiguousTensor#<nil>:4294967295'
+     4    'genTensorDestroyer#<nil>:4294967295'
+     4    'bytesUsed#<nil>:4294967295'
+
+
+Sampling rate: 1000.000000 microseconds. Total samples: 939
+
+Tier breakdown:
+-----------------------------------
+LLInt:                     0  (0.000000%)
+Baseline:                  4  (0.425985%)
+DFG:                      14  (1.490948%)
+FTL:                      96  (10.223642%)
+js builtin:               15  (1.597444%)
+Wasm:                      0  (0.000000%)
+Host:                     39  (4.153355%)
+RegExp:                    0  (0.000000%)
+C/C++:                     0  (0.000000%)
+Unknown Executable:      786  (83.706070%)
+
+
+Hottest bytecodes as <numSamples   'functionName#hash:JITType:bytecodeIndex'>
+   735    '_float32Buffer#<nil>:None:<nil>'
+    39    'toArrayBuffer#<nil>:None:<nil>'
+    31    '_add#<nil>:None:<nil>'
+    20    '#<nil>:FTL:bc#103'
+    19    'add#<nil>:FTL:bc#52'
+    18    'wrapFLTensor#<nil>:FTL:bc#73'
+    10    'gcAsNeeded#<nil>:DFG:bc#90'
+     9    'filter#<nil>:FTL:bc#49'
+     8    '_asContiguousTensor#<nil>:None:<nil>'
+     5    'toFloat32Array#<nil>:FTL:bc#122'
+     4    'genTensorDestroyer#<nil>:None:<nil>'
+     4    'bytesUsed#<nil>:None:<nil>'
+     3    'wrapFLTensor#<nil>:FTL:bc#206'
+     3    'filter#<nil>:FTL:bc#66'
+     3    '_bytes#<nil>:None:<nil>'
+     2    'toFloat32Array#<nil>:FTL:bc#98'
+     2    'map#<nil>:FTL:bc#63'
+     2    'wrapFLTensor#<nil>:Baseline:bc#58'
+     2    '#<nil>:FTL:bc#26'
+     1    'wrapFLTensor#<nil>:DFG:bc#206'
+     1    'add#<nil>:FTL:bc#377'
+     1    'add#<nil>:FTL:bc#308'
+     1    'reduce#<nil>:FTL:<nil>'
+     1    'now#<nil>:None:<nil>'
+     1    'gcAsNeeded#<nil>:DFG:bc#147'
+     1    '(module)#<nil>:Baseline:bc#255'
+     1    'add#<nil>:FTL:bc#38'
+     1    'gcAsNeeded#<nil>:FTL:bc#147'
+     1    'toFloat32Array#<nil>:FTL:bc#113'
+     1    'Tensor#<nil>:FTL:<nil>'
+     1    '_injest_ptr#<nil>:FTL:bc#157'
+     1    '(module)#<nil>:Baseline:bc#309'
+     1    'gcAsNeeded#<nil>:FTL:bc#90'
+     1    'gcAsNeeded#<nil>:FTL:<nil>'
+     1    'elements#<nil>:FTL:bc#58'
+     1    'gcAsNeeded#<nil>:FTL:bc#119'
+     1    '#<nil>:FTL:bc#31'
+     1    'Tensor#<nil>:DFG:bc#259'
+     1    '#<nil>:DFG:bc#31'

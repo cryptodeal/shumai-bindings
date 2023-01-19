@@ -1,0 +1,201 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: shumai_bindings
+# Configurations: Release
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Release
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/cryptodeal/shumai_bindings/build/
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target flashlight_binding
+
+
+#############################################
+# Order-only phony target for flashlight_binding
+
+build cmake_object_order_depends_target_flashlight_binding: phony || CMakeFiles/flashlight_binding.dir
+
+build CMakeFiles/flashlight_binding.dir/ffi_impl/bindings/bindings.cc.o: CXX_COMPILER__flashlight_binding_Release /Users/cryptodeal/shumai_bindings/ffi_impl/bindings/bindings.cc || cmake_object_order_depends_target_flashlight_binding
+  DEFINES = -DFL_ARRAYFIRE_USE_CPU=1 -DFL_ARRAYFIRE_USE_CUDA=0 -DFL_ARRAYFIRE_USE_OPENCL=0 -DFL_BACKEND_CPU=1 -DFL_BACKEND_CUDA=0 -DFL_BACKEND_OPENCL=0 -DFL_BUILD_PROFILING=0 -DFL_USE_ARRAYFIRE=1 -DFL_USE_CUDNN=0 -DFL_USE_JIT=1 -DFL_USE_ONEDNN=0 -DFL_USE_TENSOR_STUB=1 -DNAPI_VERSION=7 -DNO_CUDA_STREAM_DESTROY_EVENT -Dflashlight_binding_EXPORTS
+  DEP_FILE = CMakeFiles/flashlight_binding.dir/ffi_impl/bindings/bindings.cc.o.d
+  FLAGS = -D_DARWIN_USE_64_BIT_INODE=1 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DBUILDING_NODE_EXTENSION -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fPIC   -Wall -Wextra -std=gnu++17
+  INCLUDES = -I/Users/cryptodeal/.cmake-js/node-arm64/v18.3.0/include/node -isystem /Users/cryptodeal/usr/include/cereal -isystem /Users/cryptodeal/usr/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/flashlight_binding.dir
+  OBJECT_FILE_DIR = CMakeFiles/flashlight_binding.dir/ffi_impl/bindings
+  TARGET_COMPILE_PDB = CMakeFiles/flashlight_binding.dir/
+  TARGET_PDB = /Users/cryptodeal/shumai_bindings/libflashlight_binding.pdb
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target flashlight_binding
+
+
+#############################################
+# Link the shared library /Users/cryptodeal/shumai_bindings/libflashlight_binding.dylib
+
+build /Users/cryptodeal/shumai_bindings/libflashlight_binding.dylib: CXX_SHARED_LIBRARY_LINKER__flashlight_binding_Release CMakeFiles/flashlight_binding.dir/ffi_impl/bindings/bindings.cc.o | /Users/cryptodeal/usr/lib/libflashlight.0.3.2.dylib /opt/homebrew/lib/libafcpu.3.8.2.dylib
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
+  INSTALLNAME_DIR = @rpath/
+  LANGUAGE_COMPILE_FLAGS = -D_DARWIN_USE_64_BIT_INODE=1 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DBUILDING_NODE_EXTENSION -O3 -DNDEBUG
+  LINK_FLAGS = -undefined dynamic_lookup
+  LINK_LIBRARIES = -Wl,-rpath,/Users/cryptodeal/usr/lib -Wl,-rpath,/opt/homebrew/lib  /Users/cryptodeal/usr/lib/libflashlight.0.3.2.dylib  /opt/homebrew/lib/libafcpu.3.8.2.dylib
+  OBJECT_DIR = CMakeFiles/flashlight_binding.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = libflashlight_binding.dylib
+  SONAME_FLAG = -install_name
+  TARGET_COMPILE_PDB = CMakeFiles/flashlight_binding.dir/
+  TARGET_FILE = /Users/cryptodeal/shumai_bindings/libflashlight_binding.dylib
+  TARGET_PDB = /Users/cryptodeal/shumai_bindings/libflashlight_binding.pdb
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target shumai_bindings
+
+
+#############################################
+# Order-only phony target for shumai_bindings
+
+build cmake_object_order_depends_target_shumai_bindings: phony || CMakeFiles/shumai_bindings.dir
+
+build CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o: CXX_COMPILER__shumai_bindings_Release /Users/cryptodeal/shumai_bindings/napi_impl/bindings/bindings.cc || cmake_object_order_depends_target_shumai_bindings
+  DEFINES = -DFL_ARRAYFIRE_USE_CPU=1 -DFL_ARRAYFIRE_USE_CUDA=0 -DFL_ARRAYFIRE_USE_OPENCL=0 -DFL_BACKEND_CPU=1 -DFL_BACKEND_CUDA=0 -DFL_BACKEND_OPENCL=0 -DFL_BUILD_PROFILING=0 -DFL_USE_ARRAYFIRE=1 -DFL_USE_CUDNN=0 -DFL_USE_JIT=1 -DFL_USE_ONEDNN=0 -DFL_USE_TENSOR_STUB=1 -DNAPI_VERSION=7 -DNO_CUDA_STREAM_DESTROY_EVENT -Dshumai_bindings_EXPORTS
+  DEP_FILE = CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o.d
+  FLAGS = -D_DARWIN_USE_64_BIT_INODE=1 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DBUILDING_NODE_EXTENSION -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fPIC   -Wall -Wextra -std=gnu++17
+  INCLUDES = -I/Users/cryptodeal/.cmake-js/node-arm64/v18.3.0/include/node -I/Users/cryptodeal/shumai_bindings/node_modules/node-addon-api -isystem /Users/cryptodeal/usr/include/cereal -isystem /Users/cryptodeal/usr/include -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/shumai_bindings.dir
+  OBJECT_FILE_DIR = CMakeFiles/shumai_bindings.dir/napi_impl/bindings
+  TARGET_COMPILE_PDB = CMakeFiles/shumai_bindings.dir/
+  TARGET_PDB = Release/shumai_bindings.pdb
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target shumai_bindings
+
+
+#############################################
+# Link the shared library Release/shumai_bindings.node
+
+build Release/shumai_bindings.node: CXX_SHARED_LIBRARY_LINKER__shumai_bindings_Release CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o | /Users/cryptodeal/usr/lib/libflashlight.0.3.2.dylib /opt/homebrew/lib/libafcpu.3.8.2.dylib
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk
+  INSTALLNAME_DIR = @rpath/
+  LANGUAGE_COMPILE_FLAGS = -D_DARWIN_USE_64_BIT_INODE=1 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DBUILDING_NODE_EXTENSION -O3 -DNDEBUG
+  LINK_FLAGS = -undefined dynamic_lookup
+  LINK_LIBRARIES = -Wl,-rpath,/Users/cryptodeal/usr/lib -Wl,-rpath,/opt/homebrew/lib  /Users/cryptodeal/usr/lib/libflashlight.0.3.2.dylib  /opt/homebrew/lib/libafcpu.3.8.2.dylib
+  OBJECT_DIR = CMakeFiles/shumai_bindings.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  SONAME = shumai_bindings.node
+  SONAME_FLAG = -install_name
+  TARGET_COMPILE_PDB = CMakeFiles/shumai_bindings.dir/
+  TARGET_FILE = Release/shumai_bindings.node
+  TARGET_PDB = Release/shumai_bindings.pdb
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/cryptodeal/shumai_bindings/build && /Applications/CMake.app/Contents/bin/ccmake -S/Users/cryptodeal/shumai_bindings -B/Users/cryptodeal/shumai_bindings/build
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/cryptodeal/shumai_bindings/build && /Applications/CMake.app/Contents/bin/cmake --regenerate-during-build -S/Users/cryptodeal/shumai_bindings -B/Users/cryptodeal/shumai_bindings/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+build flashlight_binding: phony /Users/cryptodeal/shumai_bindings/libflashlight_binding.dylib
+
+build libflashlight_binding.dylib: phony /Users/cryptodeal/shumai_bindings/libflashlight_binding.dylib
+
+build shumai_bindings: phony Release/shumai_bindings.node
+
+build shumai_bindings.node: phony Release/shumai_bindings.node
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/cryptodeal/shumai_bindings/build
+
+build all: phony /Users/cryptodeal/shumai_bindings/libflashlight_binding.dylib Release/shumai_bindings.node
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCCompilerABI.c /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeNinjaFindMake.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakePushCheckState.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeSystem.cmake.in /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckCXXSourceRuns.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckIncludeFile.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckIncludeFile.cxx.in /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckLibraryExists.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/FindThreads.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Internal/CheckSourceRuns.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/cryptodeal/shumai_bindings/CMakeLists.txt /Users/cryptodeal/usr/share/flashlight/cmake/FindFilesystem.cmake /Users/cryptodeal/usr/share/flashlight/cmake/flashlightConfig.cmake /Users/cryptodeal/usr/share/flashlight/cmake/flashlightConfigVersion.cmake /Users/cryptodeal/usr/share/flashlight/cmake/flashlightTargets-debug.cmake /Users/cryptodeal/usr/share/flashlight/cmake/flashlightTargets.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireCPUTargets-release.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireCPUTargets.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireConfig.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireConfigVersion.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireOpenCLTargets-release.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireOpenCLTargets.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireUnifiedTargets-release.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireUnifiedTargets.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCCompiler.cmake.in /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCCompilerABI.c /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCInformation.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCXXCompiler.cmake.in /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCXXCompilerABI.cpp /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeCompilerIdDetection.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCompilerABI.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineCompilerId.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeDetermineSystem.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeFindBinUtils.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeFindDependencyMacro.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeNinjaFindMake.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakePushCheckState.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeSystem.cmake.in /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeTestCCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeTestCXXCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CMakeTestCompilerCommon.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckCSourceCompiles.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckCXXSourceRuns.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckIncludeFile.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckIncludeFile.cxx.in /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckIncludeFileCXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/CheckLibraryExists.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/AppleClang-C.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/AppleClang-CXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Clang.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/GNU.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/FindPackageHandleStandardArgs.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/FindPackageMessage.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/FindThreads.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Internal/CheckSourceCompiles.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Internal/CheckSourceRuns.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Internal/FeatureTesting.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-Clang-C.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Apple-Clang.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Darwin-Initialize.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/Darwin.cmake /Applications/CMake.app/Contents/share/cmake-3.24/Modules/Platform/UnixPaths.cmake /Users/cryptodeal/shumai_bindings/CMakeLists.txt /Users/cryptodeal/usr/share/flashlight/cmake/FindFilesystem.cmake /Users/cryptodeal/usr/share/flashlight/cmake/flashlightConfig.cmake /Users/cryptodeal/usr/share/flashlight/cmake/flashlightConfigVersion.cmake /Users/cryptodeal/usr/share/flashlight/cmake/flashlightTargets-debug.cmake /Users/cryptodeal/usr/share/flashlight/cmake/flashlightTargets.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireCPUTargets-release.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireCPUTargets.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireConfig.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireConfigVersion.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireOpenCLTargets-release.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireOpenCLTargets.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireUnifiedTargets-release.cmake /opt/homebrew/share/ArrayFire/cmake/ArrayFireUnifiedTargets.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

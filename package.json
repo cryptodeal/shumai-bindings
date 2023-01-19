@@ -1,0 +1,17 @@
+{
+  "name": "shumai_bindings",
+  "module": "index.ts",
+  "scripts": {
+    "format": "eslint '**/*.{js,ts}' '*.{js,ts,cjs}' package.json --fix",
+    "install": "cmake-js compile --CD flashlight_DIR=$HOME/usr/share/flashlight/cmake/"
+  },
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^0.4.0"
+  },
+  "dependencies": {
+    "@shumai/shumai": "^0.0.13-2",
+    "cmake-js": "^7.1.1",
+    "node-addon-api": "^5.1.0"
+  }
+}

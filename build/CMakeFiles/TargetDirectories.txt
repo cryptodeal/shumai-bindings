@@ -1,0 +1,4 @@
+/Users/cryptodeal/shumai_bindings/build/CMakeFiles/flashlight_binding.dir
+/Users/cryptodeal/shumai_bindings/build/CMakeFiles/shumai_bindings.dir
+/Users/cryptodeal/shumai_bindings/build/CMakeFiles/edit_cache.dir
+/Users/cryptodeal/shumai_bindings/build/CMakeFiles/rebuild_cache.dir

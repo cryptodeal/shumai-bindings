@@ -1,0 +1,13 @@
+# ninja log v5
+1	994	1674022197116632548	CMakeFiles/flashlight_binding.dir/ffi_impl/bindings/bindings.cc.o	d99f421dc929e4a0
+6	46	1674022260768271817	/Users/cryptodeal/shumai_bindings/libflashlight_binding.dylib	bb30b5b3d6275b6e
+6	1226	1674022261944870481	CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o	cc6804acf88a9d19
+1226	1260	1674022261982404862	Release/shumai_bindings.node	54a0509a6c2c3bb2
+30	1629	1674068058877837086	CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o	cc6804acf88a9d19
+1629	1685	1674068058938851938	Release/shumai_bindings.node	54a0509a6c2c3bb2
+36	1635	1674104104707416986	CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o	cc6804acf88a9d19
+1636	1691	1674104104766461499	Release/shumai_bindings.node	54a0509a6c2c3bb2
+5	1511	1674104198411627073	CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o	cc6804acf88a9d19
+1511	1564	1674104198468946013	Release/shumai_bindings.node	54a0509a6c2c3bb2
+33	1691	1674158189421277400	CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o	cc6804acf88a9d19
+1691	1749	1674158189484761748	Release/shumai_bindings.node	54a0509a6c2c3bb2
