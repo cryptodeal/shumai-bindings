@@ -21,9 +21,9 @@ static std::atomic<size_t> g_bytes_used = 0;
 
 // helpers
 static inline void DeleteTensor(Napi::Env env, void* ptr) {
-  auto* val = static_cast<fl::Tensor*>(ptr);
+  fl::Tensor* val = static_cast<fl::Tensor*>(ptr);
   if (val->hasAdapter()) {
-    auto byte_count = static_cast<int64_t>(val->bytes());
+    auto byte_count = val->bytes();
     g_bytes_used -= byte_count;
     Napi::MemoryManagement::AdjustExternalMemory(env, -byte_count);
   }
@@ -80,12 +80,13 @@ static Napi::Value _tensorFromFloat32Array(const Napi::CallbackInfo& info) {
 
 static Napi::Value _tensorFromFloat64Array(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
-  Napi::TypedArray _tmp_typed_array = info[0].As<Napi::TypedArray>();
-  int64_t length = static_cast<int64_t>(_tmp_typed_array.ElementLength());
-  double* ptr = _tmp_typed_array.As<Napi::TypedArrayOf<double>>().Data();
-  auto* t = new fl::Tensor(
+  Napi::TypedArrayOf<double> _tmp_typed_array =
+      info[0].As<Napi::TypedArrayOf<double>>();
+  int64_t length = _tmp_typed_array.ElementLength();
+  double* ptr = _tmp_typed_array.Data();
+  fl::Tensor* t = new fl::Tensor(
       fl::Tensor::fromBuffer({length}, ptr, fl::MemoryLocation::Host));
-  auto _out_bytes_used = static_cast<int64_t>(t->bytes());
+  int64_t _out_bytes_used = length * sizeof(double);
   g_bytes_used += _out_bytes_used;
   Napi::MemoryManagement::AdjustExternalMemory(env, _out_bytes_used);
   Napi::External<fl::Tensor> wrapped = ExternalizeTensor(env, t);
@@ -543,18 +544,31 @@ static Napi::Value _toFloat32Array(const Napi::CallbackInfo& info) {
 static Napi::Value _toFloat64Array(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
   fl::Tensor* t = UnExternalize<fl::Tensor>(info[0]);
-  fl::Tensor* contig_tensor = new fl::Tensor(t->asContiguousTensor());
-  size_t elemLen = static_cast<size_t>(contig_tensor->elements());
+  fl::Tensor* contig_tensor;
+  bool isContiguous = t->isContiguous();
+  if (!isContiguous) {
+    contig_tensor = new fl::Tensor(t->asContiguousTensor());
+  } else {
+    contig_tensor = t;
+  }
+  size_t elemLen = contig_tensor->elements();
   size_t byteLen = elemLen * sizeof(double);
-  double* ptr = contig_tensor->astype(fl::dtype::f64).host<double>();
+  double* ptr;
+  if (contig_tensor->type() == fl::dtype::f64) {
+    ptr = contig_tensor->host<double>();
+  } else {
+    ptr = contig_tensor->astype(fl::dtype::f64).host<double>();
+  }
   std::unique_ptr<std::vector<double>> nativeArray =
       std::make_unique<std::vector<double>>(ptr, ptr + elemLen);
-  delete contig_tensor;
+  if (!isContiguous) {
+    delete contig_tensor;
+  }
   Napi::ArrayBuffer buff =
       Napi::ArrayBuffer::New(env, nativeArray->data(), byteLen,
                              DeleteArrayBuffer<double>, nativeArray.get());
-  Napi::MemoryManagement::AdjustExternalMemory(env, byteLen);
   nativeArray.release();
+  Napi::MemoryManagement::AdjustExternalMemory(env, byteLen);
   Napi::TypedArrayOf<double> out = Napi::TypedArrayOf<double>::New(
       env, elemLen, buff, 0, napi_float64_array);
   return out;

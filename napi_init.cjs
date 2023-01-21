@@ -32,4 +32,4 @@ const runTest = (runs) => {
   console.log(`avg bytesUsed (${runs} runs) to init 10k Tensors of 1k elements and return as TypedArray (dtype = Float64): ${Number(endBytes.reduce((a, b) => a + b, BigInt(0))) / runs} bytes`)
 }
 
-runTest(10)
+runTest(1)

@@ -1,0 +1,33 @@
+
+
+Sampling rate: 1000.000000 microseconds. Total samples: 161
+Top functions as <numSamples  'functionName#hash:sourceID'>
+   153    '#<nil>:4294967295'
+     4    'fillArray#<nil>:2'
+     2    'Float64Array#<nil>:4294967295'
+     1    'Tensor#<nil>:3'
+     1    '(module)#<nil>:2'
+
+
+Sampling rate: 1000.000000 microseconds. Total samples: 161
+
+Tier breakdown:
+-----------------------------------
+LLInt:                     1  (0.621118%)
+Baseline:                  1  (0.621118%)
+DFG:                       0  (0.000000%)
+FTL:                       4  (2.484472%)
+js builtin:                0  (0.000000%)
+Wasm:                      0  (0.000000%)
+Host:                      2  (1.242236%)
+RegExp:                    0  (0.000000%)
+C/C++:                     0  (0.000000%)
+Unknown Executable:      153  (95.031056%)
+
+
+Hottest bytecodes as <numSamples   'functionName#hash:JITType:bytecodeIndex'>
+   153    '#<nil>:None:<nil>'
+     4    'fillArray#<nil>:FTL:<nil>'
+     2    'Float64Array#<nil>:None:<nil>'
+     1    '(module)#<nil>:LLInt:bc#166'
+     1    'Tensor#<nil>:Baseline:bc#1'
