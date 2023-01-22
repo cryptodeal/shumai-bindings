@@ -6,10 +6,10 @@ To install dependencies:
 bun install
 ```
 
-To run:
+To repro the issue:
 
 ```bash
-bun run index.ts
+bun run napi_init.cjs
 ```
 
 This project was created using `bun init` in bun v0.4.1. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
