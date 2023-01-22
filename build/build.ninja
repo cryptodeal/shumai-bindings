@@ -47,7 +47,7 @@ cmake_ninja_workdir = /Users/cryptodeal/shumai_bindings/build/
 build cmake_object_order_depends_target_flashlight_binding: phony || CMakeFiles/flashlight_binding.dir
 
 build CMakeFiles/flashlight_binding.dir/ffi_impl/bindings/bindings.cc.o: CXX_COMPILER__flashlight_binding_Release /Users/cryptodeal/shumai_bindings/ffi_impl/bindings/bindings.cc || cmake_object_order_depends_target_flashlight_binding
-  DEFINES = -DFL_ARRAYFIRE_USE_CPU=1 -DFL_ARRAYFIRE_USE_CUDA=0 -DFL_ARRAYFIRE_USE_OPENCL=0 -DFL_BACKEND_CPU=1 -DFL_BACKEND_CUDA=0 -DFL_BACKEND_OPENCL=0 -DFL_BUILD_PROFILING=0 -DFL_USE_ARRAYFIRE=1 -DFL_USE_CUDNN=0 -DFL_USE_JIT=1 -DFL_USE_ONEDNN=0 -DFL_USE_TENSOR_STUB=1 -DNAPI_VERSION=7 -DNO_CUDA_STREAM_DESTROY_EVENT -Dflashlight_binding_EXPORTS
+  DEFINES = -DFL_ARRAYFIRE_USE_CPU=1 -DFL_ARRAYFIRE_USE_CUDA=0 -DFL_ARRAYFIRE_USE_OPENCL=0 -DFL_BACKEND_CPU=1 -DFL_BACKEND_CUDA=0 -DFL_BACKEND_OPENCL=0 -DFL_BUILD_PROFILING=0 -DFL_USE_ARRAYFIRE=1 -DFL_USE_CUDNN=0 -DFL_USE_JIT=1 -DFL_USE_ONEDNN=0 -DFL_USE_TENSOR_STUB=1 -DNAPI_VERSION=6 -DNO_CUDA_STREAM_DESTROY_EVENT -Dflashlight_binding_EXPORTS
   DEP_FILE = CMakeFiles/flashlight_binding.dir/ffi_impl/bindings/bindings.cc.o.d
   FLAGS = -D_DARWIN_USE_64_BIT_INODE=1 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DBUILDING_NODE_EXTENSION -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fPIC   -Wall -Wextra -std=gnu++17
   INCLUDES = -I/Users/cryptodeal/.cmake-js/node-arm64/v18.3.0/include/node -isystem /Users/cryptodeal/usr/include/cereal -isystem /Users/cryptodeal/usr/include -isystem /opt/homebrew/include
@@ -89,7 +89,7 @@ build /Users/cryptodeal/shumai_bindings/libflashlight_binding.dylib: CXX_SHARED_
 build cmake_object_order_depends_target_shumai_bindings: phony || CMakeFiles/shumai_bindings.dir
 
 build CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o: CXX_COMPILER__shumai_bindings_Release /Users/cryptodeal/shumai_bindings/napi_impl/bindings/bindings.cc || cmake_object_order_depends_target_shumai_bindings
-  DEFINES = -DFL_ARRAYFIRE_USE_CPU=1 -DFL_ARRAYFIRE_USE_CUDA=0 -DFL_ARRAYFIRE_USE_OPENCL=0 -DFL_BACKEND_CPU=1 -DFL_BACKEND_CUDA=0 -DFL_BACKEND_OPENCL=0 -DFL_BUILD_PROFILING=0 -DFL_USE_ARRAYFIRE=1 -DFL_USE_CUDNN=0 -DFL_USE_JIT=1 -DFL_USE_ONEDNN=0 -DFL_USE_TENSOR_STUB=1 -DNAPI_VERSION=7 -DNO_CUDA_STREAM_DESTROY_EVENT -Dshumai_bindings_EXPORTS
+  DEFINES = -DFL_ARRAYFIRE_USE_CPU=1 -DFL_ARRAYFIRE_USE_CUDA=0 -DFL_ARRAYFIRE_USE_OPENCL=0 -DFL_BACKEND_CPU=1 -DFL_BACKEND_CUDA=0 -DFL_BACKEND_OPENCL=0 -DFL_BUILD_PROFILING=0 -DFL_USE_ARRAYFIRE=1 -DFL_USE_CUDNN=0 -DFL_USE_JIT=1 -DFL_USE_ONEDNN=0 -DFL_USE_TENSOR_STUB=1 -DNAPI_VERSION=6 -DNO_CUDA_STREAM_DESTROY_EVENT -Dshumai_bindings_EXPORTS
   DEP_FILE = CMakeFiles/shumai_bindings.dir/napi_impl/bindings/bindings.cc.o.d
   FLAGS = -D_DARWIN_USE_64_BIT_INODE=1 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DBUILDING_NODE_EXTENSION -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk -fPIC   -Wall -Wextra -std=gnu++17
   INCLUDES = -I/Users/cryptodeal/.cmake-js/node-arm64/v18.3.0/include/node -I/Users/cryptodeal/shumai_bindings/node_modules/node-addon-api -isystem /Users/cryptodeal/usr/include/cereal -isystem /Users/cryptodeal/usr/include -isystem /opt/homebrew/include

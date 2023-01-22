@@ -4,7 +4,9 @@ const { cwd } = require('process')
 const file = `${cwd()}/libflashlight_binding.${suffix}`
 
 const { symbols: fl } = dlopen(file, {
-  init: {},
+  init: {
+    args: []
+  },
   bytesUsed: {
     returns: FFIType.u64
   },

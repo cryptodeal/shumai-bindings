@@ -1,3 +1,4 @@
+#define NODE_ADDON_API_DISABLE_DEPRECATED
 #include <napi.h>
 #include <atomic>
 #include <cstdio>
@@ -342,11 +343,11 @@ static Napi::Value _tensorFromFloat32Buffer(const Napi::CallbackInfo& info) {
 static Napi::Value _tensorFromFloat64Buffer(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
   Napi::ArrayBuffer buf = info[0].As<Napi::ArrayBuffer>();
-  int64_t length = static_cast<int64_t>(buf.ByteLength() / sizeof(double));
+  int64_t length = buf.ByteLength() / sizeof(double);
   double* ptr = (double*)buf.Data();
   auto* t = new fl::Tensor(
       fl::Tensor::fromBuffer({length}, ptr, fl::MemoryLocation::Host));
-  auto _out_bytes_used = static_cast<int64_t>(t->bytes());
+  auto _out_bytes_used = t->bytes();
   g_bytes_used += _out_bytes_used;
   Napi::MemoryManagement::AdjustExternalMemory(env, _out_bytes_used);
   Napi::External<fl::Tensor> wrapped = ExternalizeTensor(env, t);
@@ -544,16 +545,14 @@ static Napi::Value _toFloat32Array(const Napi::CallbackInfo& info) {
 static Napi::Value _toFloat64Array(const Napi::CallbackInfo& info) {
   Napi::Env env = info.Env();
   fl::Tensor* t = UnExternalize<fl::Tensor>(info[0]);
-  fl::Tensor* contig_tensor;
+  fl::Tensor* contig_tensor = t;
   bool isContiguous = t->isContiguous();
   if (!isContiguous) {
     contig_tensor = new fl::Tensor(t->asContiguousTensor());
-  } else {
-    contig_tensor = t;
   }
   size_t elemLen = contig_tensor->elements();
   size_t byteLen = elemLen * sizeof(double);
-  double* ptr;
+  double* ptr = nullptr;
   if (contig_tensor->type() == fl::dtype::f64) {
     ptr = contig_tensor->host<double>();
   } else {
